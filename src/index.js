@@ -1,12 +1,10 @@
 import React from "react";
-import ReactDOM from "react-dom";
-import { BrowserRouter } from "react-router-dom";
+import ReactDOM from "react-dom/client";
 import App from "./App";
-import "./index.css"; // Ensure your CSS is imported
+import "./index.css";
 
-ReactDOM.render(
-  <BrowserRouter basename="/swappy-app"> {/* Change to your repo name */}
-    <App />
-  </BrowserRouter>,
-  document.getElementById("root")
-);
+// Get the root element from the HTML file
+const root = document.getElementById("root");
+
+// Create a React root and render the app
+ReactDOM.createRoot(root).render(<App />);
