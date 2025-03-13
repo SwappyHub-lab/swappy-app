@@ -1,0 +1,15 @@
+{
+  "files": {
+    "main.css": "/swappy-hub-app/static/css/main.388c4ef9.css",
+    "main.js": "/swappy-hub-app/static/js/main.98e40572.js",
+    "static/media/WeekendGroteskTRIAL-Black.otf": "/swappy-hub-app/static/media/WeekendGroteskTRIAL-Black.b2b1a9684e918c303fbc.otf",
+    "static/media/WeekendGroteskTRIAL-Regular.otf": "/swappy-hub-app/static/media/WeekendGroteskTRIAL-Regular.f11495577fc818d65088.otf",
+    "index.html": "/swappy-hub-app/index.html",
+    "main.388c4ef9.css.map": "/swappy-hub-app/static/css/main.388c4ef9.css.map",
+    "main.98e40572.js.map": "/swappy-hub-app/static/js/main.98e40572.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.388c4ef9.css",
+    "static/js/main.98e40572.js"
+  ]
+}
