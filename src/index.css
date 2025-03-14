@@ -50,7 +50,7 @@ h3{
 .info-container {
   display: flex;
   padding: 10px;
-  background-color: transparent;
+  background: #fff0f0;
   border: 2px solid #b18597;
   border-radius: 0.75em;
   border: solid 1px;
@@ -58,6 +58,10 @@ h3{
 
 .info-text{
   text-align: left;
+  background: #fff0f0;
+  border: 2px solid #b18597;
+  border-radius: 0.75em;
+  border: solid 1px;
 }
 
 .container {
@@ -81,6 +85,7 @@ h3{
   border: 1px solid #ddd;
   border-radius: 8px;
   font-size: 1em;
+  background: #fff0f0;
 }
 
 .swappy-item {
