@@ -175,22 +175,22 @@ const Home = () => {
   // Handle putting back a borrowed swappy item
   const handlePutBack = async (swappyId) => {
     const comment = window.prompt("What is your thought on this Swappy? Say a few words...");
-  
+
     if (!comment) return; // If no comment, do nothing
-  
+
     try {
       const swappyRef = doc(db, "swappy-items", swappyId);
       const swappySnap = await getDoc(swappyRef);
-  
+
       if (swappySnap.exists()) {
         const swappyData = swappySnap.data();
         const updatedMessages = [...swappyData.chatMessages, comment]; // Add comment to chat messages
-  
+
         await updateDoc(swappyRef, {
           chatMessages: updatedMessages,
           borrowed: false, // Mark as "not borrowed"
         });
-  
+
         if (selectedSwappy?.id === swappyId) {
           setSelectedSwappy({ ...selectedSwappy, chatMessages: updatedMessages, borrowed: false });
         }
@@ -199,7 +199,7 @@ const Home = () => {
       console.error("Error updating Swappy item:", error);
     }
   };
-  
+
 
   // Open chat for a swappy item
   const openChat = (swappy) => setSelectedSwappy(swappy);
@@ -286,20 +286,21 @@ const Home = () => {
             <p><strong>🗨️ Latest Comment:</strong> "{selectedSwappy.chatMessages[selectedSwappy.chatMessages.length - 1]}"</p>
 
           </div>
-
-          <input type="text" name="message" placeholder="Type a message..." value={formData.message || ""} onChange={handleChange} />
-          <button className="learn-more" onClick={sendMessage}>Send</button>
-
-{/* Borrow/Put Back Button */}
-<button className="learn-more borrow-button" onClick={() => {
-  if (selectedSwappy.borrowed) {
-    handlePutBack(selectedSwappy.id);
-  } else {
-    toggleBorrow(selectedSwappy.id, selectedSwappy.borrowed);
-  }
-}}>
-  {selectedSwappy.borrowed ? "Put Back" : "Borrow"}
-</button>
+          <div className="container">
+            <input type="text" name="message" placeholder="Type a message..." value={formData.message || ""} onChange={handleChange} />
+            <button className="learn-more" onClick={sendMessage}>Send</button>
+          </div>
+          
+          {/* Borrow/Put Back Button */}
+          <button className="learn-more borrow-button" onClick={() => {
+            if (selectedSwappy.borrowed) {
+              handlePutBack(selectedSwappy.id);
+            } else {
+              toggleBorrow(selectedSwappy.id, selectedSwappy.borrowed);
+            }
+          }}>
+            {selectedSwappy.borrowed ? "Put Back" : "Borrow"}
+          </button>
 
           {/* Request Button (Moved inside Chat UI) */}
           {selectedSwappy.type !== "lend" && (
@@ -341,7 +342,7 @@ const Home = () => {
               </p>
             </details>
             {swappy.imageUrl && <img src={swappy.imageUrl} alt="Swappy Thumbnail" width="300" />}
-            <p><strong>‼️</strong> {swappy.type === "lend" ? "Lend Only ‼️ Please return as soon as you finished examining it :)" : "Available for Swap"}</p>
+            <p><strong></strong> {swappy.type === "lend" ? "‼️ Lend Only ‼️ Please return as soon as you finished examining it :)" : "Available for Swap"}</p>
             <button className="learn-more chat-button" onClick={() => openChat(swappy)}>
               Open Chat
               {swappy.messageCount > 0 && (
