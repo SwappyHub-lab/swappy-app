@@ -287,10 +287,10 @@ const Home = () => {
 
           </div>
           <div className="container">
-            <input type="text" name="message" placeholder="Type a message..." value={formData.message || ""} onChange={handleChange} />
+            <input type="text" name="message" placeholder="Ask something or leave a reply..." value={formData.message || ""} onChange={handleChange} />
             <button className="learn-more" onClick={sendMessage}>Send</button>
           </div>
-          
+
           {/* Borrow/Put Back Button */}
           <button className="learn-more borrow-button" onClick={() => {
             if (selectedSwappy.borrowed) {
@@ -325,6 +325,7 @@ const Home = () => {
         {swappyList.map((swappy) => (
           <div key={swappy.id} className={`swappy-item ${swappy.requested ? 'requested' : ''}`}>
             <h3><strong>{swappy.title} by {swappy.author}</strong></h3>
+
             {swappy.requested && <span className="requested-label">✅ Requested</span>}
             {swappy.borrowed && <p className="borrowed-tag">📌 Borrowed</p>}
             {swappy.chatMessages.length > 0 && (
