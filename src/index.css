@@ -97,7 +97,7 @@ h3{
   border-bottom: 1px solid #ddd;
   padding: 10px;
   cursor: pointer;
-  background-color:  #b1859716;
+  background-color:  #b18597;
   color: aliceblue;
 }
 
@@ -105,13 +105,13 @@ h3{
 input{
   padding: 10px;
   background-color: transparent;
-  border-radius: 8px;
-  border-color: #b18597 ;
+  border: 2px solid #b18597;
+  border-radius: 0.75em;
   border: solid 1px;
 }
 
 .input-description {
-  height: 4vw;
+  height: 400px;
 }
 
 /* button From Uiverse.io by Madflows */ 
