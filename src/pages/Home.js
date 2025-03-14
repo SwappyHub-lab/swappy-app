@@ -327,7 +327,7 @@ const Home = () => {
             {swappy.requested && <span className="requested-label">✅ Requested</span>}
             {swappy.borrowed && <p className="borrowed-tag">📌 Borrowed</p>}
             {swappy.chatMessages.length > 0 && (
-              <p className="latest-message"><strong>🗨️ Latest Message:</strong> "{swappy.chatMessages[swappy.chatMessages.length - 1]}"</p>
+              <p className="latest-message"><strong>🗨️ :</strong> "{swappy.chatMessages[swappy.chatMessages.length - 1]}"</p>
             )}
 
             <details className="swappy-details">
