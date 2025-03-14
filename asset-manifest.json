@@ -1,15 +1,15 @@
 {
   "files": {
-    "main.css": "/swappy-app/static/css/main.7c86ac90.css",
-    "main.js": "/swappy-app/static/js/main.d8ba7710.js",
-    "static/media/WeekendGroteskTRIAL-Black.otf": "/swappy-app/static/media/WeekendGroteskTRIAL-Black.b2b1a9684e918c303fbc.otf",
-    "static/media/WeekendGroteskTRIAL-Regular.otf": "/swappy-app/static/media/WeekendGroteskTRIAL-Regular.f11495577fc818d65088.otf",
-    "index.html": "/swappy-app/index.html",
-    "main.7c86ac90.css.map": "/swappy-app/static/css/main.7c86ac90.css.map",
-    "main.d8ba7710.js.map": "/swappy-app/static/js/main.d8ba7710.js.map"
+    "main.css": "/static/css/main.5aa37263.css",
+    "main.js": "/static/js/main.91d2772f.js",
+    "static/media/WeekendGroteskTRIAL-Black.otf": "/static/media/WeekendGroteskTRIAL-Black.b2b1a9684e918c303fbc.otf",
+    "static/media/WeekendGroteskTRIAL-Regular.otf": "/static/media/WeekendGroteskTRIAL-Regular.f11495577fc818d65088.otf",
+    "index.html": "/index.html",
+    "main.5aa37263.css.map": "/static/css/main.5aa37263.css.map",
+    "main.91d2772f.js.map": "/static/js/main.91d2772f.js.map"
   },
   "entrypoints": [
-    "static/css/main.7c86ac90.css",
-    "static/js/main.d8ba7710.js"
+    "static/css/main.5aa37263.css",
+    "static/js/main.91d2772f.js"
   ]
 }
