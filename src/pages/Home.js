@@ -345,7 +345,7 @@ const Home = () => {
               </p>
             </details>
             {swappy.imageUrl && <img src={swappy.imageUrl} alt="Swappy Thumbnail" width="300" />}
-            <p><strong></strong> {swappy.type === "lend" ? "‼️ Lend Only ‼️ Please return as soon as you finished examining it :)" : "Available for Swap"}</p>
+            <p><strong></strong> {swappy.type === "lend" ? "‼️ Lend Only ‼️ Please return when you finished examining it :) Thank you!" : "Available for Swap"}</p>
             <button className="learn-more chat-button" onClick={() => openChat(swappy)}>
               Open Chat
               {swappy.messageCount > 0 && (
