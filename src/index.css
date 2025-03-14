@@ -1,6 +1,6 @@
-@tailwind base;
+/* @tailwind base;
 @tailwind components;
-@tailwind utilities;
+@tailwind utilities; */
 @font-face {
   font-family: 'weekend' ;
   src: url(WeekendGroteskTRIAL-Regular.otf);
@@ -246,9 +246,9 @@ button {
   z-index: 200000000;
 }
 
-.chat-box {
-  /* margin-top: 20px; */
-}
+/* .chat-box {
+  margin-top: 20px;
+} */
 .chat-messages {
   border: 1px solid #ddd;
   width: 80vw;
