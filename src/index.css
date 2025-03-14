@@ -49,6 +49,11 @@ h3{
 }
 .info-container {
   display: flex;
+  padding: 10px;
+  background-color: transparent;
+  border: 2px solid #b18597;
+  border-radius: 0.75em;
+  border: solid 1px;
 }
 
 .info-text{
