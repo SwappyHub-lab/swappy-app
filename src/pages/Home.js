@@ -292,15 +292,17 @@ const Home = () => {
           </div>
 
           {/* Borrow/Put Back Button */}
-          <button className="learn-more borrow-button" onClick={() => {
-            if (selectedSwappy.borrowed) {
-              handlePutBack(selectedSwappy.id);
-            } else {
-              toggleBorrow(selectedSwappy.id, selectedSwappy.borrowed);
-            }
-          }}>
-            {selectedSwappy.borrowed ? "Put Back" : "Borrow"}
-          </button>
+          {selectedSwappy.type !== "swap" && (
+            <button className="learn-more borrow-button" onClick={() => {
+              if (selectedSwappy.borrowed) {
+                handlePutBack(selectedSwappy.id);
+              } else {
+                toggleBorrow(selectedSwappy.id, selectedSwappy.borrowed);
+              }
+            }}>
+              {selectedSwappy.borrowed ? "Put Back" : "Borrow"}
+            </button>
+          )}
 
           {/* Request Button (Moved inside Chat UI) */}
           {selectedSwappy.type !== "lend" && (
