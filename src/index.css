@@ -110,6 +110,10 @@ input{
   border: solid 1px;
 }
 
+.input-description {
+  height: 4vw;
+}
+
 /* button From Uiverse.io by Madflows */ 
 button {
   position: relative;
