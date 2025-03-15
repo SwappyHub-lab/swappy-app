@@ -3,7 +3,7 @@
 @tailwind utilities; */
 @font-face {
   font-family: 'weekend' ;
-  src: url(WeekendGroteskTRIAL-Regular.otf);
+  src: url(SourceCodePro-Italic-VariableFont_wght.ttf);
 }
 
 @font-face {
@@ -30,6 +30,7 @@ h1{
   font-family: weekendbold;
   margin: 0;
   font-size: 4em;
+  font-weight: 800;
   width: 200vw;
 }
 h2{
