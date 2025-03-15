@@ -226,7 +226,9 @@ const Home = () => {
   return (
     <div>
       {/* Header */}
+      <div className="header">
       <h1>Welcome to Swappy-Hub</h1>
+      </div>
       <p>A decentralized self-publishing and distribution network for design students.</p>
       <p>Share your zines, prints, and other design work with your peers!</p>
       <h2>Swappy-Unit: GDA</h2>

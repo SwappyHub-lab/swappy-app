@@ -35,7 +35,18 @@ body {
 body button{
   font-size: 1em;
 }
-
+.header {
+  width: 100%;
+  line-height: 50px;
+  background-color: magenta;
+  color: white;
+  white-space: nowrap;
+  overflow: hidden;
+    overflow-x: hidden;
+  box-sizing: border-box;
+  max-width: 100%;
+  overflow-x: hidden;
+}
 h1{
   /* font-size: 5em; */
   font-family: weekendbold;
@@ -58,7 +69,7 @@ h2{
 
 h3{
   white-space: nowrap;
-  animation: marquee 10s linear infinite;
+  animation: marquee 20s linear infinite;
   font-family: weekendbold;
   font-size: 2em;
 }
