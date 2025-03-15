@@ -10,6 +10,17 @@
   font-family: 'weekendbold' ;
   src: url(Sora-VariableFont_wght.ttf);
 }
+@keyframes marquee{
+	/* Element one fully ON screen at left-edge of container. */
+	from {
+		transform: translateX( 0% );
+	}
+	/* Element one fully OFF screen (just beyond left-ledge of container). */
+	to {
+		transform: translateX( -100% );
+	}
+}
+
 
 body {
   max-width: 100vw;
@@ -31,7 +42,8 @@ h1{
   margin: 0;
   font-size: 4em;
   font-weight: 800;
-  width: 200vw;
+  translate: -100%;
+  animation: marquee 10s linear infinite;
 }
 h2{
   /* font-size: 5em; */
