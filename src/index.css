@@ -52,7 +52,6 @@ h3{
   padding: 10px;
   background: #AECFEB;
   border: 2px solid #6D8396;
-  border: solid 1px;
 }
 
 .info-text{
@@ -87,8 +86,7 @@ h3{
   padding: 10px;
   margin-bottom: 5vw;
   cursor: pointer;
-  border: 30px solid #6D8396;
-  border: solid 1px;
+  border: 2px solid #6D8396;
 }
 
 .swappy-item:hover{
@@ -97,7 +95,6 @@ h3{
   justify-content: center;
   align-items: center;
   border: 2px solid #6D8396;
-  border: solid 1px;
   padding: 10px;
   cursor: pointer;
   background-color:  #6D8396;
@@ -108,8 +105,7 @@ h3{
 input {
   padding: 10px;
   background-color: transparent;
-  border:  2px solid #6D8396;
-  border: solid 1px;
+  border: 2px solid #6D8396;
 }
 
 .input-description {
@@ -153,7 +149,7 @@ button {
   bottom: 0;
   background: #192E41;
   -webkit-box-shadow: 0 0 0 2px #192E41, 0 0.625em 0 0 #AECFEB;
-  box-shadow: 0 0 0 0 #192E41, 0 0.625em 0 0 #192E41;
+  box-shadow: 0 0 0 2px #ACB7C0, 0 0.625em 0 0 #AECFEB;
   -webkit-transform: translate3d(.5em, 0.75em, -1em);
   transform: translate3d(-.5em, 0.75em, -1em);
   transition: transform 150ms cubic-bezier(0, 0, 0.58, 1), box-shadow 150ms cubic-bezier(0, 0, 0.58, 1), -webkit-transform 150ms cubic-bezier(0, 0, 0.58, 1), -webkit-box-shadow 150ms cubic-bezier(0, 0, 0.58, 1);
@@ -167,7 +163,7 @@ button {
  
  button.learn-more:hover::before {
   -webkit-box-shadow: 0 0 0 2px #192E41, 0 0.5em 0 0 #AECFEB;
-  box-shadow: 0 0 0 0 #192E41, 0 0.5em 0 0 #192E41;
+  box-shadow: 0 0 0 2px #192E41, 0 0.5em 0 0 #AECFEB;
   -webkit-transform: translate3d(0, 0.5em, -1em);
   transform: translate3d(0, 0.5em, -1em);
  }
@@ -180,7 +176,7 @@ button {
  
  button.learn-more:active::before {
   -webkit-box-shadow: 0 0 0 2px #192E41, 0 0 #AECFEB;
-  box-shadow: 0 0 0 0 #192E41, 0 0 #192E41;
+  box-shadow: 0 0 0 2px #192E41, 0 0 #AECFEB;
   -webkit-transform: translate3d(0, 0, -1em);
   transform: translate3d(0, 0, -1em);
  }
@@ -229,8 +225,7 @@ button {
   width: 80vw;
   height: 5vw;
   background-color: transparent;
-  border-color: #6D8396 ;
-  border: solid 1px;
+  border: 2px solid #6D8396;
 }
 
  .containerChat-box{
