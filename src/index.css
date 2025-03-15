@@ -20,6 +20,10 @@
 		transform: translateX( -100% );
 	}
 }
+html, body {
+  max-width: 100%;
+  overflow-x: hidden;
+}
 
 
 body {
@@ -35,18 +39,7 @@ body {
 body button{
   font-size: 1em;
 }
-.header {
-  width: 100%;
-  line-height: 50px;
-  background-color: magenta;
-  color: white;
-  white-space: nowrap;
-  overflow: hidden;
-    overflow-x: hidden;
-  box-sizing: border-box;
-  max-width: 100%;
-  overflow-x: hidden;
-}
+
 h1{
   /* font-size: 5em; */
   font-family: weekendbold;
