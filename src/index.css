@@ -150,8 +150,8 @@ button {
   background: #192E41;
   -webkit-box-shadow: 0 0 0 2px #192E41, ;
   box-shadow: 0 0 0 2px #ACB7C0, ;
-  -webkit-transform: translate3d(.5em, 0.75em, -1em);
-  transform: translate3d(-.5em, 0.75em, -1em);
+  -webkit-transform: translate3d(.5em, 0.75em, -.5em);
+  transform: translate3d(-.5em, 0.75em, -.5em);
   transition: transform 150ms cubic-bezier(0, 0, 0.58, 1), box-shadow 150ms cubic-bezier(0, 0, 0.58, 1), -webkit-transform 150ms cubic-bezier(0, 0, 0.58, 1), -webkit-box-shadow 150ms cubic-bezier(0, 0, 0.58, 1);
  }
  
@@ -162,10 +162,10 @@ button {
  }
  
  button.learn-more:hover::before {
-  -webkit-box-shadow: 0 0 0 2px #192E41, 0 0.5em 0 0 #AECFEB;
-  box-shadow: 0 0 0 2px #192E41, 0 0.5em 0 0 #AECFEB;
-  -webkit-transform: translate3d(0, 0.5em, -1em);
-  transform: translate3d(0, 0.5em, -1em);
+  -webkit-box-shadow: 0 0 0 2px #192E41,;
+  box-shadow: 0 0 0 2px #192E41, ;
+  -webkit-transform: translate3d(0, 0.5em, -.5em);
+  transform: translate3d(0, 0.5em, -.5em);
  }
  
  button.learn-more:active {
@@ -175,10 +175,10 @@ button {
  }
  
  button.learn-more:active::before {
-  -webkit-box-shadow: 0 0 0 2px #192E41, 0 0 #AECFEB;
-  box-shadow: 0 0 0 2px #192E41, 0 0 #AECFEB;
-  -webkit-transform: translate3d(0, 0, -1em);
-  transform: translate3d(0, 0, -1em);
+  -webkit-box-shadow: 0 0 0 2px #192E41, ;
+  box-shadow: 0 0 0 2px #192E41,;
+  -webkit-transform: translate3d(0, 0, -.5em);
+  transform: translate3d(0, 0, -.5em);
  }
 
  .swapRequestButtonContainer {
