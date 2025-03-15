@@ -13,7 +13,7 @@
 @keyframes marquee{
 	/* Element one fully ON screen at left-edge of container. */
 	from {
-		transform: translateX( 0% );
+		transform: translateX( 100% );
 	}
 	/* Element one fully OFF screen (just beyond left-ledge of container). */
 	to {
@@ -26,7 +26,7 @@ body {
   max-width: 100vw;
   font-family: 'weekend';
   text-align: center;
-  /* margin: 20px; */
+  border: none;
   font-size: 1em;
   background-color: #ACB7C0;
   background-image: url('backgroungrid.png'); ;
@@ -42,7 +42,7 @@ h1{
   margin: 0;
   font-size: 4em;
   font-weight: 800;
-  translate: -100%;
+  white-space: nowrap;
   animation: marquee 10s linear infinite;
 }
 h2{
@@ -57,10 +57,10 @@ h2{
 }
 
 h3{
-  /* font-size: 5em; */
+  white-space: nowrap;
+  animation: marquee 10s linear infinite;
   font-family: weekendbold;
   font-size: 2em;
-  /* margin: 0; */
 }
 .info-container {
   display: flex;
