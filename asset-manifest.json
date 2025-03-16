@@ -1,0 +1,16 @@
+{
+  "files": {
+    "main.css": "/static/css/main.6e236c6b.css",
+    "main.js": "/static/js/main.31af545c.js",
+    "static/media/backgroungrid.png": "/static/media/backgroungrid.eb5e40acd4e11200f229.png",
+    "static/media/SourceCodePro-Italic-VariableFont_wght.ttf": "/static/media/SourceCodePro-Italic-VariableFont_wght.cded957db157e3ec2c05.ttf",
+    "static/media/Sora-VariableFont_wght.ttf": "/static/media/Sora-VariableFont_wght.e56298aec2e944c699d8.ttf",
+    "index.html": "/index.html",
+    "main.6e236c6b.css.map": "/static/css/main.6e236c6b.css.map",
+    "main.31af545c.js.map": "/static/js/main.31af545c.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.6e236c6b.css",
+    "static/js/main.31af545c.js"
+  ]
+}
