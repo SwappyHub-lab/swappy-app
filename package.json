@@ -1,5 +1,5 @@
 {
-  "homepage": "https://SwappyHub-lab.github.io/swappy-app-dev",
+  "homepage": "https://swappyhub.com",
   "name": "swappy-hub",
   "version": "0.1.0",
   "private": true,
@@ -22,7 +22,7 @@
   "scripts": {
     "start": "react-scripts start",
     "predeploy": "npm run build",
-    "deploy": "node deployfor-gh-pages-dev.js",
+    "deploy": "gh-pages -b gh-pages-dev -d build",
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject"
