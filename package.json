@@ -22,7 +22,7 @@
   "scripts": {
     "start": "react-scripts start",
     "predeploy": "npm run build",
-    "deploy": "gh-pages-clean && gh-pages -r 'https://github.com/SwappyHub-lab/swappy-app-dev.git' -b gh-pages-dev -d build --no-history",
+    "deploy": "node deployfor-gh-pages-dev.js",
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject"
