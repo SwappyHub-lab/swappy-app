@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from "react";
+import { useNavigate, useParams } from "react-router-dom";
 import { db } from "../firebase";
 import { collection, addDoc, getDoc, onSnapshot, updateDoc, doc, deleteDoc } from "firebase/firestore";
 import axios from 'axios';
@@ -6,6 +7,9 @@ import axios from 'axios';
 // Main component
 const Home = () => {
   // State variables
+  const navigate = useNavigate();
+  const { unit } = useParams(); // Get the unit from the URL
+  const [selectedUnit, setSelectedUnit] = useState(unit || "GDA"); // Default to "GDA"
   const [swappyList, setSwappyList] = useState([]);
   const [unitAddress, setUnitAddress] = useState("");
   const [formData, setFormData] = useState({
@@ -21,32 +25,49 @@ const Home = () => {
   const [selectedSwappy, setSelectedSwappy] = useState(null);
   const [loading, setLoading] = useState(false);
 
+   // Update selectedUnit when the URL changes
+   useEffect(() => {
+    if (unit && unit !== selectedUnit) {
+      setSelectedUnit(unit);
+    }
+  }, [unit]);
+
+
   // Fetch swappy items and unit address on component mount
-  useEffect(() => {
-    const unsubscribe = onSnapshot(collection(db, "swappy-items"), (snapshot) => {
+useEffect(() => {
+  const unsubscribe = onSnapshot(
+    collection(db, "Swappy-Units", selectedUnit, "items"), // Use selectedUnit dynamically
+    (snapshot) => {
       const sortedSwappies = snapshot.docs
-        .map(doc => ({ id: doc.id, ...doc.data() }))
+        .map((doc) => ({ id: doc.id, ...doc.data() }))
         .sort((a, b) => b.createdAt?.toDate() - a.createdAt?.toDate());
       setSwappyList(sortedSwappies);
-    });
+    }
+  );
 
-    const fetchAddress = async () => {
-      try {
-        const unitRef = doc(db, "Swappy-Units", "GDA");
-        const unitSnap = await getDoc(unitRef);
-        if (unitSnap.exists()) {
-          setUnitAddress(unitSnap.data().location);
-        } else {
-          console.warn("No unit address found in Swappy-Units!");
-        }
-      } catch (error) {
-        console.error("Error fetching unit address:", error);
+  const fetchAddress = async () => {
+    try {
+      const unitRef = doc(db, "Swappy-Units", selectedUnit); // Use selectedUnit dynamically
+      const unitSnap = await getDoc(unitRef);
+      if (unitSnap.exists()) {
+        setUnitAddress(unitSnap.data().location);
+      } else {
+        console.warn("No unit address found!");
       }
-    };
+    } catch (error) {
+      console.error("Error fetching unit address:", error);
+    }
+  };
 
-    fetchAddress();
-    return unsubscribe;
-  }, []);
+  fetchAddress();
+  return unsubscribe; // Cleanup listener on unmount
+}, [selectedUnit]); // Re-run when `selectedUnit` changes
+
+// Change unit and update the URL
+const changeUnit = (newUnit) => {
+  setSelectedUnit(newUnit);
+  navigate(`/${newUnit}`); // Updates the URL
+};
 
   // Handle form input changes
   const handleChange = (e) => setFormData({ ...formData, [e.target.name]: e.target.value });
@@ -81,7 +102,7 @@ const Home = () => {
 
     setLoading(true);
     try {
-      await addDoc(collection(db, "swappy-items"), {
+      await addDoc(collection(db, "Swappy-Units", selectedUnit, "items"), {
         ...formData,
         imageUrl: image || "",
         chatMessages: [],
@@ -107,7 +128,7 @@ const Home = () => {
   // Handle request for a swappy item
   const handleRequest = async (swappyId, isRequested) => {
     try {
-      await updateDoc(doc(db, "swappy-items", swappyId), { requested: !isRequested });
+      await updateDoc(doc(db,"Swappy-Units",selectedUnit, "items", swappyId), { requested: !isRequested });
 
       // Update both the chat interface and swappy list
       setSwappyList((prevList) =>
@@ -129,7 +150,7 @@ const Home = () => {
     if (!window.confirm("Are you sure to remove this item?")) return;
 
     try {
-      await deleteDoc(doc(db, "swappy-items", swappyId));
+      await deleteDoc(doc(db, "Swappy-Units", selectedUnit, "items", swappyId));
     } catch (error) {
       console.error("Error removing Swappy:", error);
     }
@@ -142,7 +163,7 @@ const Home = () => {
 
       if (feedback !== null && feedback.trim() !== "") {
         try {
-          await updateDoc(doc(db, "swappy-items", swappyId), {
+          await updateDoc(doc(db, "Swappy-Units", selectedUnit, "items", swappyId), {
             borrowed: false,
             feedback: feedback
           });
@@ -155,7 +176,7 @@ const Home = () => {
       }
     } else {
       try {
-        await updateDoc(doc(db, "swappy-items", swappyId), { borrowed: true });
+        await updateDoc(doc(db, "Swappy-Units", selectedUnit, "items", swappyId), { borrowed: true });
       } catch (error) {
         console.error("Error updating borrow status:", error);
       }
@@ -179,7 +200,7 @@ const Home = () => {
     if (!comment) return; // If no comment, do nothing
 
     try {
-      const swappyRef = doc(db, "swappy-items", swappyId);
+      const swappyRef = doc(db,"Swappy-Units", selectedUnit, "items", swappyId);
       const swappySnap = await getDoc(swappyRef);
 
       if (swappySnap.exists()) {
@@ -226,6 +247,21 @@ const Home = () => {
   return (
     <div>
       {/* Header */}
+      <div>
+      {/* Navigation buttons */}
+      <button onClick={() => changeUnit("GDA")} disabled={selectedUnit === "GDA"}>
+        GDA
+      </button>
+      <button onClick={() => changeUnit("PDA")} disabled={selectedUnit === "PDA"}>
+        PDA
+      </button>
+
+     
+
+      {/* Other UI elements */}
+    </div>
+
+
 
       <h1>Welcome to Swappy-Hub</h1>
 
@@ -235,7 +271,7 @@ const Home = () => {
         <img class="logo" src="swappy.png" alt="" />
       </div>
       <div className="header">
-        <h2>Graphic Design Arnhem </h2>
+      <h2>{selectedUnit === "GDA" ? "Graphic Design Arnhem" : "Product Design Arnhem"}</h2>
       </div>
       {unitAddress && (
         <p>
