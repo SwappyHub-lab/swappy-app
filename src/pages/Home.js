@@ -250,17 +250,14 @@ const changeUnit = (newUnit) => {
       
       <div>
         {/* Home Button */}
-      <button 
-        onClick={() => navigate("/")} 
-        style={{ margin: "10px", padding: "10px 20px", fontSize: "16px" }}
-      >
-        ⬅️ Back to Home
+      <button className="learn-more" onClick={() => navigate("/")} >
+        ⬅ Back to Home
       </button>
       {/* Navigation buttons */}
-      <button onClick={() => changeUnit("GDA")} disabled={selectedUnit === "GDA"}>
+      <button className="learn-more" onClick={() => changeUnit("GDA")} disabled={selectedUnit === "GDA"}>
         GDA
       </button>
-      <button onClick={() => changeUnit("PDA")} disabled={selectedUnit === "PDA"}>
+      <button className="learn-more" onClick={() => changeUnit("PDA")} disabled={selectedUnit === "PDA"}>
         PDA
       </button>
 
