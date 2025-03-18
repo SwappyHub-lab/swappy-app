@@ -247,7 +247,15 @@ const changeUnit = (newUnit) => {
   return (
     <div>
       {/* Header */}
+      
       <div>
+        {/* Home Button */}
+      <button 
+        onClick={() => navigate("/")} 
+        style={{ margin: "10px", padding: "10px 20px", fontSize: "16px" }}
+      >
+        ⬅️ Back to Home
+      </button>
       {/* Navigation buttons */}
       <button onClick={() => changeUnit("GDA")} disabled={selectedUnit === "GDA"}>
         GDA

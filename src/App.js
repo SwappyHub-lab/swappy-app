@@ -4,19 +4,18 @@ import Login from "./pages/Login";
 import Register from "./pages/Register";
 import Dashboard from "./pages/Dashboard";
 import CreateUnit from "./pages/CreateUnit";
-// import SwappyHub from "./pages/SwappyHub"; 
+import LandingPage from "./pages/LandingPage"; // Import new landing page
 
 function App() {
   return (
     <Router>
       <Routes>
+        <Route path="/" element={<LandingPage />} /> {/* Landing Page as default */}
         <Route path="/:unit" element={<Home />} />
-        <Route path="/" element={<Home />} />
         <Route path="/login" element={<Login />} />
         <Route path="/register" element={<Register />} />
         <Route path="/dashboard" element={<Dashboard />} />
         <Route path="/create-unit" element={<CreateUnit />} />
-        {/* <Route path="/swappy-hub" element={<SwappyHub />} />  */}
       </Routes>
     </Router>
   );
