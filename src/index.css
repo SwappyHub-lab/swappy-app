@@ -44,8 +44,14 @@ body {
   text-align: center;
   border: none;
   font-size: 1em;
-  background-color: #c000ce;
+  background-color: #ACB7C0;
   background-image: url('backgroungrid.png'); 
+}
+
+.navbar {
+  display: flex;
+column-gap: 2vw;
+justify-content: center;
 }
 
 body button{

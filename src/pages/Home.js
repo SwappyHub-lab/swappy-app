@@ -248,7 +248,7 @@ const changeUnit = (newUnit) => {
     <div>
       {/* Header */}
       
-      <div>
+      <div className="navbar">
         {/* Home Button */}
       <button className="learn-more" onClick={() => navigate("/")} >
         ⬅ Back to Home
