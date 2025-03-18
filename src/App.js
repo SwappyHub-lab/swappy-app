@@ -4,18 +4,19 @@ import Login from "./pages/Login";
 import Register from "./pages/Register";
 import Dashboard from "./pages/Dashboard";
 import CreateUnit from "./pages/CreateUnit";
-import SwappyHub from "./pages/SwappyHub"; // Import the Swappy interface component
+// import SwappyHub from "./pages/SwappyHub"; 
 
 function App() {
   return (
     <Router>
       <Routes>
+        <Route path="/:unit" element={<Home />} />
         <Route path="/" element={<Home />} />
         <Route path="/login" element={<Login />} />
         <Route path="/register" element={<Register />} />
         <Route path="/dashboard" element={<Dashboard />} />
         <Route path="/create-unit" element={<CreateUnit />} />
-        <Route path="/swappy-hub" element={<SwappyHub />} /> {/* New Route */}
+        {/* <Route path="/swappy-hub" element={<SwappyHub />} />  */}
       </Routes>
     </Router>
   );
