@@ -251,7 +251,7 @@ const changeUnit = (newUnit) => {
       <div className="navbar">
         {/* Home Button */}
       <button className="learn-more" onClick={() => navigate("/")} >
-        ⬅ Back to Home
+        ⬅ Other Units
       </button>
       {/* Navigation buttons */}
       <button className="learn-more" onClick={() => changeUnit("GDA")} disabled={selectedUnit === "GDA"}>
@@ -290,7 +290,7 @@ const changeUnit = (newUnit) => {
       {/* Add Swappy Form */}
       <div className="container">
         <button className="learn-more" onClick={addSwappy} disabled={loading}>
-          {loading ? "Adding..." : "Add Swappy"}
+          {loading ? "Uploading...Just a second :)" : "Add Swappy"}
         </button>
         <input type="text" name="title" placeholder="Title" value={formData.title} onChange={handleChange} />
         <input type="text" name="author" placeholder="Author" value={formData.author} onChange={handleChange} />
