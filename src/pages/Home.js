@@ -232,7 +232,7 @@ const changeUnit = (newUnit) => {
     const updatedMessages = [...selectedSwappy.chatMessages, formData.message];
 
     try {
-      await updateDoc(doc(db, "swappy-items", selectedSwappy.id), {
+      await updateDoc(doc(db, "Swappy-Units", selectedUnit, "items", selectedSwappy.id), {
         chatMessages: updatedMessages,
         messageCount: updatedMessages.length,
       });
@@ -251,15 +251,15 @@ const changeUnit = (newUnit) => {
       <div className="navbar">
         {/* Home Button */}
       <button className="learn-more" onClick={() => navigate("/")} >
-        ⬅ Other Units
+        ⬅ Checkout Other Units
       </button>
       {/* Navigation buttons */}
-      <button className="learn-more" onClick={() => changeUnit("GDA")} disabled={selectedUnit === "GDA"}>
+      {/* <button className="learn-more" onClick={() => changeUnit("GDA")} disabled={selectedUnit === "GDA"}>
         GDA
       </button>
       <button className="learn-more" onClick={() => changeUnit("PDA")} disabled={selectedUnit === "PDA"}>
         PDA
-      </button>
+      </button> */}
 
      
 
