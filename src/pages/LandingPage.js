@@ -8,12 +8,16 @@ const LandingPage = () => {
       <h1>Welcome to SwappyHub</h1>
       <p>Select a Swappy Unit to continue:</p>
 
-      <button className="learn-more" onClick={() => navigate("/GDA")} style={{ margin: "10px", padding: "10px 20px", fontSize: "16px" }}>
-        📚 Graphic Design Arnhem (GDA)
+      <button className="learn-more" onClick={() => navigate("/GDA")} >
+        Graphic Design Arnhem (GDA)
       </button>
       
-      <button className="learn-more" onClick={() => navigate("/PDA")} style={{ margin: "10px", padding: "10px 20px", fontSize: "16px" }}>
-        🎨 Product Design Arnhem (PDA)
+      <button className="learn-more" onClick={() => navigate("/PDA")}>
+        Product Design Arnhem (PDA)
+      </button>
+
+      <button className="learn-more" onClick={() => navigate("/XPUB")} >
+        Experimental Publishing (XPUB)
       </button>
     </div>
   );
