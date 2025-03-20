@@ -5,6 +5,9 @@ const LandingPage = () => {
 
   return (
     <div style={{ textAlign: "center", padding: "50px" }}>
+       <div class="logo-box">
+        <img class="logo" src="swappy.png" alt="" />
+      </div>
       <h1>Welcome to SwappyHub</h1>
       <p>Select a Swappy Unit to continue:</p>
 
@@ -16,9 +19,9 @@ const LandingPage = () => {
         Product Design Arnhem (PDA)
       </button>
 
-      <button className="learn-more" onClick={() => navigate("/XPUB")} >
+      {/* <button className="learn-more" onClick={() => navigate("/XPUB")} >
         Experimental Publishing (XPUB)
-      </button>
+      </button> */}
     </div>
   );
 };

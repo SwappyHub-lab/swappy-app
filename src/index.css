@@ -44,7 +44,7 @@ body {
   text-align: center;
   border: none;
   font-size: 1em;
-  background-color: #6D8396;
+  background-color: #d2dae1;
   background-image: url('backgroungrid.png'); 
 }
 
@@ -80,7 +80,7 @@ rotate: 15deg;
 .header{
   position: sticky;
   top: 0;
-  background-color: #6D8396;
+  background-color:  #d2dae1;
   z-index: 4000000;
   background-image: url('backgroungrid.png'); 
 }
@@ -202,7 +202,7 @@ button {
   color: #382b22;
   text-transform: uppercase;
   padding: 1.25em 2em;
-  background: #AECFEB;
+  background: transparent;
   border: 2px solid #6D8396;
   -webkit-transform-style: preserve-3d;
   transform-style: preserve-3d;
@@ -220,7 +220,7 @@ button {
   left: 0;
   right: 0;
   bottom: 0;
-  background: #192E41;
+  background: transparent;
   -webkit-box-shadow: 0 0 0 2px #192E41, ;
   box-shadow: 0 0 0 2px #ACB7C0, ;
   -webkit-transform: translate3d(.5em, 0.75em, -.5em);

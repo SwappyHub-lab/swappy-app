@@ -267,15 +267,12 @@ const sendMessage = async () => {
       {/* Other UI elements */}
     </div>
 
-
-
-      <h1>Welcome to Swappy-Hub</h1>
-
-      <p>A decentralized self-publishing and distribution network for design students.</p>
-      <p>Share your zines, prints, and other design work with your peers!</p>
-      <div class="logo-box">
+    <div class="logo-box">
         <img class="logo" src="swappy.png" alt="" />
       </div>
+      <p>A decentralized self-publishing and distribution network for design students.</p>
+      <p>Share your zines, prints, and other design work with your peers!</p>
+     
       <div className="header">
       <h2>{selectedUnit === "GDA" ? "Graphic Design Arnhem" : "Product Design Arnhem"}</h2>
       </div>
