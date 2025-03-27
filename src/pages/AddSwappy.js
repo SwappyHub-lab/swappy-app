@@ -263,6 +263,49 @@ const sendMessage = async () => {
       {/* Header */}
       
       <div className="navbar">
+
+         {/* Dropdown Sections */}
+         <div >
+            <style>
+              {`
+    .hover-box {
+      display: flex;
+      margin-top: 30px;
+      text-align: left;
+      max-width: 600px;
+      margin: auto;
+      cursor: pointer;
+      transition: background-color 0.3s;
+    }
+    .hover-box:hover {
+      text-decoration: underline;
+    }
+  `}
+            </style>
+
+            <details className="hover-box">
+              <summary>How to Publish?</summary>
+              <ol>
+                <li> <strong>Choose</strong> a physical or digital project (prints, drawings, manuscripts, books, zines, or any other small objects).</li>
+                <br></br>
+                <li>Pick a <strong>Creative Commons License</strong>  (more info on the Swappy-Publish Card) and attach it to your object.</li>
+                <br></br>
+                <li> <strong>Scan the QR code</strong> on the unit and add your awesome project to the Swappy Unit.</li>
+              </ol>
+            </details>
+
+            <details className="hover-box">
+              <summary>How to Swap?</summary>
+              <ol>
+                <li>Go to <strong></strong><a href="https://www.swappyhub.com">www.swappyhub.com</a> and browse through the available Swappy Units and the Swappies inside them.</li>
+                <br></br>
+                <li>Found something nice?<strong>Start a chat about it!</strong> </li>
+                <br></br>
+                <li>If the Swappy is in the unit next to you, feel free to <strong>swap or borrow</strong> it. If the Swappy you like is in <strong>submit a request</strong>another Swappy Unit, <strong>submit a request</strong> and wait for it to arrive at your unit.</li>
+              </ol>
+            </details> 
+          </div>
+          <br></br>
         {/* Home Button */}
       <button className="learn-more" onClick={() => navigate("/")} >
         ⬅ Checkout Other Units
@@ -331,7 +374,7 @@ const sendMessage = async () => {
           </p>
         </div>
         <button className="learn-more" onClick={addSwappy} disabled={loading}>
-          {loading ? "Uploading...Just a second :)" : "Add Swappy"}
+          {loading ? "Uploading...Just a second :)" : "Publish Your Swappy"}
         </button>
       </div>
 
@@ -372,9 +415,9 @@ const sendMessage = async () => {
             <div className="swapRequestButtonContainer">
               {selectedSwappy.requested}
 
-              <button className="learn-more" onClick={() => handleRequest(selectedSwappy.id, selectedSwappy.requested)}>
+              {/* <button className="learn-more" onClick={() => handleRequest(selectedSwappy.id, selectedSwappy.requested)}>
                 {selectedSwappy.requested ? "Cancel Request" : "Request This Swappy"}
-              </button>
+              </button> */}
 
               <button className="learn-more" onClick={() => handleSwap(selectedSwappy.id)}>Swap This Swappy</button>
 
