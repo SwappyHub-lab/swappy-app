@@ -51,6 +51,7 @@ body {
 a{
   color: none;
 }
+
 .navbar {
   display: flex;
   flex-direction: column;
@@ -179,6 +180,7 @@ input {
   padding: 10px;
   background-color: transparent;
   border: 2px solid #6D8396;
+  color: black;
 }
 
 .input-description {

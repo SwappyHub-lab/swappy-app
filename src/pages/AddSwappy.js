@@ -352,7 +352,7 @@ const sendMessage = async () => {
         <input type="text" name="title" placeholder="Title" value={formData.title} onChange={handleChange} />
         <input type="text" name="author" placeholder="Author" value={formData.author} onChange={handleChange} />
         <input className="input-description" type="text" name="description" placeholder="Description" value={formData.description} onChange={handleChange} />
-        <input type="text" name="socialmedia" placeholder="Social Media" value={formData.socialmedia} onChange={handleChange} />
+        <input type="text" name="socialmedia" placeholder="@Instagram" value={formData.socialmedia} onChange={handleChange} />
         {/* <input type="email" name="email" placeholder="Email" value={formData.email} onChange={handleChange} /> */}
         <input type="file" accept="image/*" onChange={handleImageChange} />
         <div className="info-container">
