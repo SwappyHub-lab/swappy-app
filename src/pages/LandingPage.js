@@ -88,7 +88,21 @@ const LandingPage = () => {
         </button>
        </div>
       </div>
+
       <br></br>
+
+      <div style={{ display: "flex", justifyContent: "center", flexDirection: "column",
+ alignItems: "center" }}>
+      <img src="CWA.svg" style={{ maxWidth: 200 }}></img>
+      <br></br>
+      <button className="learn-more" onClick={() => navigate("/CWA")}  style={{transform: "rotate(30deg)"  }} >
+        Creative Writing Arnhem (CWA)
+      </button>
+      </div>
+
+      <br></br>
+
+
       <div style={{ display: "flex", justifyContent: "center", flexDirection: "column",
  alignItems: "center" }}>
       <img src="PDA.svg" style={{ maxWidth: 200 }}></img>
@@ -98,7 +112,7 @@ const LandingPage = () => {
       </button>
       </div>
 
-      <br></br>
+      
       {/* <button className="learn-more" onClick={() => navigate("/XPUB")}>
         Experimental Publishing (XPUB)
       </button> */}

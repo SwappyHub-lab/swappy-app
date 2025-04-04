@@ -24,6 +24,8 @@ const Home = () => {
   const [image, setImage] = useState(null);
   const [selectedSwappy, setSelectedSwappy] = useState(null);
   const [loading, setLoading] = useState(false);
+  const [department, setDepartment] = useState(""); // State to store the department name
+
 
   // Update selectedUnit when the URL changes
   useEffect(() => {
@@ -31,6 +33,33 @@ const Home = () => {
       setSelectedUnit(unit); // Updates the selected unit based on the URL parameter
     }
   }, [unit]);
+
+
+
+
+
+   // Fetch the department name from Firestore
+   useEffect(() => {
+    const fetchDepartment = async () => {
+      try {
+        const unitRef = doc(db, "Swappy-Units", selectedUnit); // Reference the selected unit document
+        const unitSnap = await getDoc(unitRef); // Fetch the document
+        if (unitSnap.exists()) {
+          setDepartment(unitSnap.data().department || "Unknown Department"); // Update the department state
+        } else {
+          console.warn("No department found for the selected unit!");
+          setDepartment("Unknown Department");
+        }
+      } catch (error) {
+        console.error("Error fetching department:", error);
+        setDepartment("Error fetching department");
+      }
+    };
+    fetchDepartment();
+  }, [selectedUnit]); // Re-run when the selected unit changes
+
+
+
 
   // Fetch swappy items and unit address on component mount
   useEffect(() => {
@@ -58,9 +87,13 @@ const Home = () => {
       }
     };
 
+
+
     fetchAddress();
     return unsubscribe; // Cleans up the Firestore listener on unmount
   }, [selectedUnit]); // Re-runs when the selected unit changes
+
+
 
   // Change unit and update the URL
   const changeUnit = (newUnit) => {
@@ -68,8 +101,14 @@ const Home = () => {
     navigate(`/${newUnit}`); // Updates the URL to reflect the new unit
   };
 
+
+
+
   // Handle form input changes
   const handleChange = (e) => setFormData({ ...formData, [e.target.name]: e.target.value }); // Updates form data state dynamically
+
+
+
 
   // Handle image upload
   const handleImageChange = async (e) => {
@@ -91,6 +130,10 @@ const Home = () => {
     }
     setLoading(false); // Sets loading state to false
   };
+
+
+
+
 
   // Add a new swappy item
   const addSwappy = async () => {
@@ -124,6 +167,10 @@ const Home = () => {
     setLoading(false); // Sets loading state to false
   };
 
+
+
+
+
   // Handle request for a swappy item
   const handleRequest = async (swappyId, isRequested) => {
     try {
@@ -144,6 +191,9 @@ const Home = () => {
     }
   };
 
+
+
+
   // Handle swap of a swappy item
   const handleSwap = async (swappyId) => {
     if (!window.confirm("Are you sure to remove this item?")) return; // Confirms the action with the user
@@ -154,6 +204,9 @@ const Home = () => {
       console.error("Error removing Swappy:", error); // Logs an error if deleting fails
     }
   };
+
+
+
 
   // Toggle borrow status of a swappy item
   const toggleBorrow = async (swappyId, isBorrowed) => {
@@ -192,6 +245,9 @@ const Home = () => {
     }
   };
 
+
+
+
   // Handle putting back a borrowed swappy item
   const handlePutBack = async (swappyId) => {
     const comment = window.prompt("What is your thought on this Swappy? Say a few words..."); // Prompts the user for a comment
@@ -220,8 +276,14 @@ const Home = () => {
     }
   };
 
+
+
+
   // Open chat for a swappy item
   const openChat = (swappy) => setSelectedSwappy(swappy); // Sets the selected swappy for chat
+
+
+
 
   // Send a chat message
   const sendMessage = async () => {
@@ -329,7 +391,7 @@ const Home = () => {
         <p>Share your zines, prints, and other design work with your peers!</p>
 
         <div className="header">
-          <h2>{selectedUnit === "GDA" ? "Graphic Design Arnhem" : "Product Design Arnhem"}</h2>
+          <h2>{department}</h2>
         </div>
         {unitAddress && (
           <p>

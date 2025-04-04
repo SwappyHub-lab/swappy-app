@@ -37,6 +37,8 @@ const Home = () => {
   const [image, setImage] = useState(null);
   const [selectedSwappy, setSelectedSwappy] = useState(null);
   const [loading, setLoading] = useState(false);
+  const [department, setDepartment] = useState(""); // State to store the department name
+
 
 // Update selectedUnit when the URL changes
 useEffect(() => {
@@ -44,6 +46,29 @@ useEffect(() => {
     setSelectedUnit(unit); // Updates the selected unit based on the URL parameter
   }
 }, [unit]);
+
+
+ // Fetch the department name from Firestore
+ useEffect(() => {
+  const fetchDepartment = async () => {
+    try {
+      const unitRef = doc(db, "Swappy-Units", selectedUnit); // Reference the selected unit document
+      const unitSnap = await getDoc(unitRef); // Fetch the document
+      if (unitSnap.exists()) {
+        setDepartment(unitSnap.data().department || "Unknown Department"); // Update the department state
+      } else {
+        console.warn("No department found for the selected unit!");
+        setDepartment("Unknown Department");
+      }
+    } catch (error) {
+      console.error("Error fetching department:", error);
+      setDepartment("Error fetching department");
+    }
+  };
+
+  fetchDepartment();
+}, [selectedUnit]); // Re-run when the selected unit changes
+
 
 // Fetch swappy items and unit address on component mount
 useEffect(() => {
@@ -333,7 +358,7 @@ const sendMessage = async () => {
         <img class="logo" src="swappy.png" alt="" />
       </div>
       <div className="header">
-      <h2>{selectedUnit === "GDA" ? "Graphic Design Arnhem" : "Product Design Arnhem"}</h2>
+      <h2>{department}</h2>
       </div>
       {unitAddress && (
         <p>
