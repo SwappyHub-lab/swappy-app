@@ -1,16 +1,16 @@
 {
   "files": {
-    "main.css": "/static/css/main.cf3dc8fd.css",
-    "main.js": "/static/js/main.791b9b6a.js",
-    "static/media/bcg.WEBP": "/static/media/bcg.52a99a35f0728b444763.WEBP",
+    "main.css": "/static/css/main.ef003bfe.css",
+    "main.js": "/static/js/main.ade2d0b3.js",
+    "static/media/bcg.jpg": "/static/media/bcg.100d25278b4127479d70.jpg",
     "static/media/SourceCodePro-Italic-VariableFont_wght.ttf": "/static/media/SourceCodePro-Italic-VariableFont_wght.cded957db157e3ec2c05.ttf",
     "static/media/Sora-VariableFont_wght.ttf": "/static/media/Sora-VariableFont_wght.e56298aec2e944c699d8.ttf",
     "index.html": "/index.html",
-    "main.cf3dc8fd.css.map": "/static/css/main.cf3dc8fd.css.map",
-    "main.791b9b6a.js.map": "/static/js/main.791b9b6a.js.map"
+    "main.ef003bfe.css.map": "/static/css/main.ef003bfe.css.map",
+    "main.ade2d0b3.js.map": "/static/js/main.ade2d0b3.js.map"
   },
   "entrypoints": [
-    "static/css/main.cf3dc8fd.css",
-    "static/js/main.791b9b6a.js"
+    "static/css/main.ef003bfe.css",
+    "static/js/main.ade2d0b3.js"
   ]
 }
