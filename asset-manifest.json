@@ -1,16 +1,16 @@
 {
   "files": {
     "main.css": "/static/css/main.4f9ab825.css",
-    "main.js": "/static/js/main.4350e650.js",
+    "main.js": "/static/js/main.278d24b4.js",
     "static/media/bcgsoft-1.webp": "/static/media/bcgsoft-1.8f40372d55b2a22d4b72.webp",
     "static/media/SourceCodePro-Italic-VariableFont_wght.ttf": "/static/media/SourceCodePro-Italic-VariableFont_wght.cded957db157e3ec2c05.ttf",
     "static/media/Swappy-FontVF.woff": "/static/media/Swappy-FontVF.f3737bf08a8443c66032.woff",
     "index.html": "/index.html",
     "main.4f9ab825.css.map": "/static/css/main.4f9ab825.css.map",
-    "main.4350e650.js.map": "/static/js/main.4350e650.js.map"
+    "main.278d24b4.js.map": "/static/js/main.278d24b4.js.map"
   },
   "entrypoints": [
     "static/css/main.4f9ab825.css",
-    "static/js/main.4350e650.js"
+    "static/js/main.278d24b4.js"
   ]
 }
